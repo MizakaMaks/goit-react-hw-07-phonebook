@@ -14,12 +14,12 @@ export default function ContactForm() {
   const nameInputId = nanoid();
   const numberInputId = nanoid();
 
-  const handleSubmit = event => {
-    event.preventDefault();
-
+  const handleSubmit = e => {
+    e.preventDefault();
+    const form = e.target;
     const contact = {
-      name,
-      number,
+      name: form.elements.name.value,
+      phone: form.elements.number.value,
       id: nanoid(),
     };
 
